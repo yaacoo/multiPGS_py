@@ -11,10 +11,6 @@ This method can score up to 5 different PGS on an individual genome and can easi
 
 The program reads both the PGS file and the VCF file line by line, and only keeps a PGS dictionary in memory, which is no more than 60-70Mb. This allows parallelization over many VCF files without running into memory issues. 
 
-## Requirements
-
-Python 3 and up. No dependencies. 
-
 ## What we account for
 
 1. Strand flips (when the DNA strand orientation differs between the reference and the sample)
@@ -45,6 +41,10 @@ python multiPGS_py.py sample.vcf.gz PGS000001.txt.gz PGS000002.txt.gz
 * Make sure the VCF has a dosage (DS) field.
 * The output file is a single line text file (for each VCF) and can easily be concatenated.
 * Tested against Plink2 and pgsc_calc, and provided similar results.
+
+## Requirements
+
+Python 3 and up. No dependencies. 
 
 ## Limitations of PGS to be aware of
 
