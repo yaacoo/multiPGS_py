@@ -4,13 +4,13 @@ multiPGS_py is a fast, simple, and low-memory Python method to calculate polygen
 
 ## Motivation
 
-Current available tools that calculate PGS still require many manual steps (e.g., to account for flips), require a very strict format, or only accept a cohort VCF, instead of individual genomes (single-sample indexed VCF). 
+Current available tools that calculate PGS still require many manual steps (e.g., to account for flips), require a very strict format, or only accept a cohort VCF, instead of individual genomes (single-sample indexed VCF files). 
 This method can score up to 5 different PGS on an individual genome and can easily be applied to many VCF files using a simple bash script or as part of a workflow/job scheduler. 
 
 ## Low-memory for efficient parallelization
 
 The program reads both the PGS file and the VCF file one line at a time, and only keeps a PGS dictionary in memory, which is no more than 60-70Mb. This allows parallelization over many VCF files without running into memory issues. 
-Need to make 
+
 
 ## What we account for
 
@@ -43,6 +43,17 @@ python multiPGS_py.py sample.vcf.gz PGS000001.txt.gz PGS000002.txt.gz
 * Make sure the VCF has a dosage (DS) field.
 * The output file is a single line text file (for each VCF) and can easily be concatenated.
 * Tested against Plink2 and pgsc_calc, and provided similar results.
+
+## Parallel processing of multiple genomes simultaneously (experimental)
+
+Set the number of CPU cores available per VM (default n_cpu=20) and process genomes in batches based on the number of available CPU cores. 
+After each batch is processed, the next batch is loaded. <br> 
+Using a cluster of 10 VMs, each with 20 CPU cores and 1 GB of RAM per CPU, you can expect to process 1,000 genomes in less than 45 minutes. <br>
+
+```
+python parallel_pgs.py <vcf_list.txt> <pgs_file1.txt.gz> [<pgs_file2.txt.gz> ...]
+```
+
 
 ## Dependencies
 
