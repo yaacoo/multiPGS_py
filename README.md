@@ -25,7 +25,7 @@ PGS_{individual} = \sum_{i=1}^{n} (dosage_i \times \beta_i)
 ## What you still need to check and verify
 
 1. Filter/QC of the imputation quality, filter by max(genotype probability) if needed.
-2. That you know the VCF genome build, and which column in the PGS file corresponds to the relevant genome build. This should be in the PGS header, and you should edit line 7 of the Python file if needed.
+2. That you know the VCF genome build, and which column in the PGS file corresponds to the relevant genome build. This should be in the PGS header, and you should edit line 10 of the Python file if needed.
 3. That your VCF is bgzipped and indexed by tabix, having the index file in the same path and prefix (e.g. S001.vcf.gz + S001.vcf.gz.tbi)
 
 ## How to use
