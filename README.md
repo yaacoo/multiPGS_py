@@ -46,9 +46,7 @@ python multiPGS_py.py sample.vcf.gz PGS000001.txt.gz PGS000002.txt.gz
 
 ## Dependencies
 
-Python 3.6.8
-pysam 0.16.0.1
-numpy 1.18.5
+Python 3.6.8 | pysam 0.16.0.1 | numpy 1.18.5
 
 ## Limitations of PGS to be aware of
 
