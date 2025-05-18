@@ -2,6 +2,8 @@
 
 multiPGS_py is a fast, simple, and low-memory Python method to calculate polygenic scores (PGS/PRS) from any PGS Catalog weights (pgscatalog.org) and single-sample VCF files. 
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/yaacoo/multiPGS_py)
+
 ## Motivation
 
 Current available tools that calculate PGS still require many manual steps (e.g., to account for flips), require a very strict format, or only accept a cohort VCF, instead of individual genomes (single-sample indexed VCF files). 
